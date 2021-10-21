@@ -1,0 +1,289 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.select {
+  position: relative;
+  width: 100%;
+  height: 26px;
+
+  &.active {
+    z-index: 3;
+
+    & .select-wrap {
+      box-shadow: 0 6px 18px rgba(26,41,52, 0.3);
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transition: opacity 0.3s;
+    }
+  }
+
+  &-wrap {
+    position: absolute;
+    width: 100%;
+    top: 25px;
+    background-color: $white;
+    pointer-events: none;
+    visibility: hidden;
+    border-radius: 0 0 0 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &-list {
+    list-style: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      height: 3px;
+      width: 3px;
+      cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 3px #dde8f0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $blue;
+      border-radius: 3px;
+      outline: none;
+      background-clip: border-box;
+      cursor: pointer;
+    }
+  }
+
+  &-item {
+    position: relative;
+    font-size: 10px;
+    line-height: 13px;
+    color: $black;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 6px 26px 6px 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+
+    &:hover {
+      color: $black;
+      background-color: $gray-blue;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    & span {
+      display: block;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &.select-simple {
+    &.disabled {
+      & .select-main {
+        opacity: 0.5;
+      }
+    }
+
+    &.active {
+      & .select-main {
+        &:after{
+          transform: translate(-50%, -50%) rotate(180deg);
+          transition: transform 0.3s;
+        }
+      }
+    }
+
+    & .select-main {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      font-size: 10px;
+      font-weight: 400;
+      width: 100%;
+      height: 26px;
+      background-color: $white;
+      border: 1px solid $gray-blue;
+      padding: 0 26px 0 8px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: border 0.3s;
+      z-index: 2;
+
+      &:after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 3px;
+        transform: translate(-50%, -50%);
+        width: 9px;
+        height: 9px;
+        background: url("../img/icon-arrow-down.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        transition: transform 0.3s;
+      }
+
+      & span {
+        color: $black;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+      }
+    }
+
+    & .select-wrap {
+      border-radius: 0 0 2px 2px;
+      border: 1px solid $gray-blue;
+      border-top: none;
+    }
+
+    & .select-list {
+      max-height: 130px;
+      border-radius: 0 0 2px 2px;
+    }
+  }
+
+  &.select-multi {
+    width: 100%;
+
+    &.disabled {
+      & .select-main {
+        opacity: 0.5;
+      }
+    }
+
+    &.active {
+      & .select-main {
+        &:after{
+          transform: translate(-50%, -50%) rotate(180deg);
+          transition: transform 0.3s;
+        }
+      }
+    }
+
+    & .select-main {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      font-size: 10px;
+      font-weight: 400;
+      width: 100%;
+      height: 26px;
+      background-color: $white;
+      border: 1px solid $gray-blue;
+      padding: 0 26px 0 8px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: border 0.3s;
+      z-index: 2;
+
+      &:after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 3px;
+        transform: translate(-50%, -50%);
+        width: 9px;
+        height: 9px;
+        background: url("../img/icon-arrow-down.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        transition: transform 0.3s;
+        opacity: 0.3;
+      }
+
+      & span {
+        color: $black;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+
+        &.select-placeholder {
+          color: $gray;
+        }
+      }
+    }
+
+    & .select-wrap {
+      width: 100%;
+      top: 25px;
+      overflow: hidden;
+      background-color: $white;
+      border-radius: 0 0 0 4px;
+    }
+
+    & .select-search {
+      position: relative;
+      background-color: $gray-blue;
+      padding: 8px;
+
+      & .input {
+        padding-right: 24px;
+      }
+
+      & svg {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        fill: $gray;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    & .select-list {
+      max-height: 130px;
+    }
+
+    & .select-item {
+      position: relative;
+      font-size: 10px;
+      line-height: 13px;
+      color: $gray;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 0;
+      width: 100%;
+      cursor: pointer;
+      transition: color 0.3s, background-color 0.3s;
+
+      &:hover {
+        color: $blue;
+        background-color: $gray-blue;
+        transition: color 0.3s, background-color 0.3s;
+
+        & .checkbox__box {
+          color: $blue;
+          transition: color 0.3s, background-color 0.3s;
+        }
+      }
+
+      & .checkbox__box {
+        font-size: 10px;
+        line-height: 13px;
+        color: $black;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        padding: 6px 10px 7px 32px;
+
+        &:before {
+          top: 6px;
+          left: 10px;
+        }
+        &:after {
+          top: 8px;
+          left: 11px;
+        }
+      }
+    }
+  }
+}

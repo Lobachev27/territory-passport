@@ -1,0 +1,12 @@
+<div class="select select-simple @@context.disabled">
+  <div class="select-main"><span>@@context.selected</span></div>
+  <div class="select-wrap">
+    <ul class="select-list">
+      @@for (var i = 0; i < context.arr.length; i++) {
+      <li class="select-item">
+        <span>`+context.arr[i]+`</span>
+      </li>
+      }
+    </ul>
+  </div>
+</div>

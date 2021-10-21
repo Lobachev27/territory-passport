@@ -1,0 +1,44 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.breadcrumbs {
+  position: relative;
+  width: 100%;
+  min-width: 1200px;
+  background-color: $gray-blue-dark;
+
+  & .container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    position: relative;
+    display: block;
+    padding: 16px 0;
+
+    & span {
+      color: $gray;
+    }
+  }
+
+  &__link {
+    display: inline;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $blue;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+
+    &:last-child {
+      color: $gray !important;
+      opacity: 1 !important;
+      cursor: default;
+    }
+  }
+}

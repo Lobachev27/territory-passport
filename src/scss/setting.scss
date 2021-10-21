@@ -1,0 +1,65 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.setting {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: max-content;
+  z-index: 3;
+  transition: opacity 0.5s ease-in;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+
+  &.active{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s ease-out;
+  }
+
+  &:after{
+    content: '';
+    position: absolute;
+    top: -16px;
+    right: 18px;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-bottom: 8px solid $white;
+  }
+
+  &__list{
+    position: relative;
+    list-style: none;
+    border-radius: 2px;
+    background-color: $white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+  &__item{
+    &:hover{
+      background-color: $gray-blue;
+    }
+    & .checkbox__box {
+      font-size: 10px;
+      line-height: 13px;
+      color: $black;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      padding: 6px 10px 7px 32px;
+
+      &:before {
+        top: 6px;
+        left: 10px;
+      }
+      &:after {
+        top: 8px;
+        left: 11px;
+      }
+    }
+  }
+}

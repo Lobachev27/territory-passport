@@ -1,0 +1,82 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.input {
+  position: relative;
+  font-size: 10px;
+  font-weight: 400;
+  height: 26px;
+  width: 100%;
+  border-radius: 2px;
+  outline: none;
+  color: $black;
+  border: 1px solid $gray-blue;
+  background-color: $white;
+  padding: 0 20px 0 8px;
+  transition: color 0.3s;
+
+  &::placeholder{
+    color: $gray;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+  }
+
+  &__box {
+    position: relative;
+    width: 100%;
+    line-height: 1;
+
+    & .icon-calendar {
+      position: absolute;
+      fill: $gray;
+      width: 12px;
+      height: 12px;
+      right: 6px;
+      bottom: 7px;
+    }
+  }
+
+  &__name {
+    font-size: 11px;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+}
+
+.custom-file-upload-hidden {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+}
+
+.custom-file-upload {
+  display: block;
+  width: 100%;
+}
+
+.file-upload-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.file-upload-input {
+  width: 100%;
+  font-size: 11px;
+  line-height: 1.25em;
+  height: auto;
+  border: none;
+  outline: none;
+  color: $black;
+  background-color: transparent;
+  margin-left: 12px;
+  margin-top: 7px;
+}
+
+.file-upload-button {
+  cursor: pointer;
+  width: max-content;
+  min-width: max-content;
+  order: -1;
+}

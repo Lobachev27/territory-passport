@@ -1,0 +1,53 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.pagination{
+  display: flex;
+  align-items: center;
+  &__item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 400;
+    color: $gray;
+    background-color: $white;
+    border: 1px solid $gray-blue;
+    border-left: none;
+    width: 26px;
+    height: 26px;
+    transition: all 0.3s;
+    &:first-child{
+      border-left: 1px solid $gray-blue;
+    }
+    &.active{
+      color: $black;
+      background-color: $gray-blue;
+    }
+    &:hover{
+      background-color: $gray-blue;
+      transition: all 0.3s;
+    }
+    &.prev,
+    &.next{
+      img{
+        width: 5px;
+        opacity: 0.3;
+      }
+    }
+    &.start,
+    &.end{
+      img{
+        width: 9px;
+        opacity: 0.3;
+      }
+    }
+    &.start,
+    &.prev{
+      img{
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

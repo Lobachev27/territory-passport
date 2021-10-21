@@ -1,0 +1,8 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.shown{
+  position: relative;
+  font-weight: 500;
+  font-size: 12px;
+}

@@ -1,0 +1,565 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.table {
+  position: relative;
+  width: 100%;
+  min-width: 742px;
+  max-width: 100%;
+  padding: 5px 20px;
+  margin: 0 auto;
+  /*overflow-x: auto;*/
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 3px;
+    width: 3px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px #dde8f0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue;
+    border-radius: 3px;
+    outline: none;
+    background-clip: border-box;
+    cursor: pointer;
+  }
+
+  &__topic {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /*min-width: max-content;*/
+    cursor: pointer;
+
+    &-col {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      font-size: 11px;
+      font-weight: 500;
+      width: 100%;
+      padding: 7px;
+      color: $black;
+
+      &.col-photo {
+        width: 46px;
+        min-width: 46px;
+      }
+
+      &.col-name {
+        width: 13%;
+        min-width: 13%;
+      }
+
+      &.col-position {
+        width: 21%;
+        min-width: 21%;
+      }
+
+      &.col-address {
+        width: 20%;
+        min-width: 20%;
+      }
+
+      &.col-telephone {
+        width: 17%;
+        min-width: 17%;
+      }
+
+      &.col-email {
+        width: 23%;
+        min-width: 23%;
+      }
+
+      &.col-datatype {
+        width: 35%;
+        min-width: 35%;
+      }
+
+      &.col-file {
+        width: 23%;
+        min-width: 23%;
+      }
+
+      &.col-date {
+        width: 21%;
+        min-width: 21%;
+      }
+
+      &.col-person {
+        width: 21%;
+        min-width: 21%;
+      }
+
+      &.col-subdivision {
+        width: 27%;
+        min-width: 27%;
+      }
+
+      &.col-subaddress {
+        width: 27%;
+        min-width: 27%;
+      }
+
+      &.col-personnel {
+        width: 18%;
+        min-width: 18%;
+      }
+
+      &.col-technique {
+        width: 11%;
+        min-width: 11%;
+      }
+
+      &.col-status {
+        width: 16%;
+        min-width: 16%;
+      }
+
+      &.col-terr1 {
+        width: 75%;
+        min-width: 75%;
+      }
+
+      &.col-terr2 {
+        width: 25%;
+        min-width: 25%;
+      }
+
+      &.col-risk1 {
+        width: 15%;
+        min-width: 15%;
+      }
+
+      &.col-risk2 {
+        width: 8%;
+        min-width: 8%;
+      }
+
+      &.col-risk3 {
+        width: 9%;
+        min-width: 9%;
+      }
+
+      &.col-risk4 {
+        width: 10%;
+        min-width: 10%;
+      }
+
+      &.col-risk5 {
+        width: 7%;
+        min-width: 7%;
+      }
+
+      &.col-risk6 {
+        width: 11%;
+        min-width: 11%;
+      }
+
+      &.col-risk7 {
+        width: 14%;
+        min-width: 14%;
+      }
+
+      &.col-risk8 {
+        width: 10%;
+        min-width: 10%;
+      }
+
+      &.col-risk9 {
+        width: 10%;
+        min-width: 10%;
+      }
+
+      &.col-risk10 {
+        width: 6%;
+        min-width: 6%;
+      }
+
+      &.col-sh1 {
+        width: 6%;
+        min-width: 6%;
+      }
+
+      &.col-sh2 {
+        width: 16%;
+        min-width: 16%;
+      }
+
+      &.col-sh3 {
+        width: 15%;
+        min-width: 15%;
+      }
+
+      &.col-sh4 {
+        width: 12%;
+        min-width: 12%;
+      }
+
+      &.col-sh5 {
+        width: 12%;
+        min-width: 12%;
+      }
+
+      &.col-sh6 {
+        width: 14%;
+        min-width: 14%;
+      }
+
+      &.col-sh7 {
+        width: 14%;
+        min-width: 14%;
+      }
+
+      &.col-sh8 {
+        width: 11%;
+        min-width: 11%;
+      }
+
+      &.col-v1 {
+        width: 20%;
+        min-width: 20%;
+      }
+
+      &.col-v2 {
+        width: 20%;
+        min-width: 20%;
+      }
+
+      &.col-v3 {
+        width: 18%;
+        min-width: 18%;
+      }
+
+      &.col-v4 {
+        width: 18%;
+        min-width: 18%;
+      }
+
+      &.col-v5 {
+        width: 12%;
+        min-width: 12%;
+      }
+
+      &.col-v6 {
+        width: 12%;
+        min-width: 12%;
+      }
+
+      & svg {
+        fill: #D4D4D4;
+        width: 10px;
+        min-width: 10px;
+        height: 10px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    width: 100%;
+    /*min-width: max-content;*/
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $gray-blue;
+
+    &-col {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      font-size: 11px;
+      font-weight: 400;
+      width: 100%;
+      padding: 7px;
+      color: $black;
+
+      &.col-photo {
+        width: 46px;
+        min-width: 46px;
+      }
+
+      &.col-name {
+        width: 13%;
+        min-width: 13%;
+      }
+
+      &.col-position {
+        width: 21%;
+        min-width: 21%;
+      }
+
+      &.col-address {
+        width: 20%;
+        min-width: 20%;
+      }
+
+      &.col-telephone {
+        width: 17%;
+        min-width: 17%;
+      }
+
+      &.col-email {
+        width: 23%;
+        min-width: 23%;
+      }
+
+      &.col-datatype {
+        width: 35%;
+        min-width: 35%;
+      }
+
+      &.col-file {
+        width: 23%;
+        min-width: 23%;
+      }
+
+      &.col-date {
+        width: 21%;
+        min-width: 21%;
+      }
+
+      &.col-person {
+        width: 21%;
+        min-width: 21%;
+      }
+
+      &.col-subdivision {
+        width: 27%;
+        min-width: 27%;
+      }
+
+      &.col-subaddress {
+        width: 27%;
+        min-width: 27%;
+      }
+
+      &.col-personnel {
+        width: 18%;
+        min-width: 18%;
+      }
+
+      &.col-technique {
+        width: 11%;
+        min-width: 11%;
+      }
+
+      &.col-status {
+        width: 16%;
+        min-width: 16%;
+
+        &.red {
+          & .span-status {
+            background-color: #FF0000;
+          }
+        }
+
+        &.green {
+          & .span-status {
+            background-color: #41C820;
+          }
+        }
+
+        & .span-status {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          margin-right: 6px;
+        }
+      }
+
+      &.col-terr1 {
+        width: 75%;
+        min-width: 75%;
+      }
+
+      &.col-terr2 {
+        width: 25%;
+        min-width: 25%;
+        padding: 3px 7px;
+      }
+
+      &.col-risk1 {
+        width: 15%;
+        min-width: 15%;
+      }
+
+      &.col-risk2 {
+        width: 8%;
+        min-width: 8%;
+        padding: 3px;
+      }
+
+      &.col-risk3 {
+        width: 9%;
+        min-width: 9%;
+        padding: 3px;
+      }
+
+      &.col-risk4 {
+        width: 10%;
+        min-width: 10%;
+        padding: 3px;
+      }
+
+      &.col-risk5 {
+        width: 7%;
+        min-width: 7%;
+        padding: 3px;
+      }
+
+      &.col-risk6 {
+        width: 11%;
+        min-width: 11%;
+        padding: 3px;
+      }
+
+      &.col-risk7 {
+        width: 14%;
+        min-width: 14%;
+        padding: 3px;
+      }
+
+      &.col-risk8 {
+        width: 10%;
+        min-width: 10%;
+        padding: 3px;
+      }
+
+      &.col-risk9 {
+        width: 10%;
+        min-width: 10%;
+        padding: 3px;
+      }
+
+      &.col-risk10 {
+        width: 6%;
+        min-width: 6%;
+        padding: 3px;
+      }
+
+      &.col-sh1 {
+        width: 6%;
+        min-width: 6%;
+      }
+
+      &.col-sh2 {
+        width: 16%;
+        min-width: 16%;
+      }
+
+      &.col-sh3 {
+        width: 15%;
+        min-width: 15%;
+      }
+
+      &.col-sh4 {
+        width: 12%;
+        min-width: 12%;
+      }
+
+      &.col-sh5 {
+        width: 12%;
+        min-width: 12%;
+      }
+
+      &.col-sh6 {
+        width: 14%;
+        min-width: 14%;
+      }
+
+      &.col-sh7 {
+        width: 14%;
+        min-width: 14%;
+      }
+
+      &.col-sh8 {
+        width: 11%;
+        min-width: 11%;
+      }
+
+      &.col-v1 {
+        width: 20%;
+        min-width: 20%;
+      }
+
+      &.col-v2 {
+        width: 20%;
+        min-width: 20%;
+      }
+
+      &.col-v3 {
+        width: 18%;
+        min-width: 18%;
+      }
+
+      &.col-v4 {
+        width: 18%;
+        min-width: 18%;
+      }
+
+      &.col-v5 {
+        width: 12%;
+        min-width: 12%;
+      }
+
+      &.col-v6 {
+        width: 12%;
+        min-width: 12%;
+      }
+
+      & img {
+        width: 32px;
+        height: 32px;
+        object-position: center;
+        object-fit: cover;
+        border-radius: 2px;
+      }
+
+      & span {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        line-height: 1.25em;
+      }
+
+      & .icon-edit,
+      & .icon-delete {
+        cursor: pointer;
+        margin: 0 3px;
+
+        & svg {
+          fill: $blue;
+          width: 10px;
+          height: 10px;
+          transition: fill 0.3s;
+
+          &:hover {
+            fill: $blue-hover;
+            transition: fill 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+  & .input {
+    &[disabled] {
+      opacity: 1;
+      border: 1px solid transparent;
+    }
+  }
+}

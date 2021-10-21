@@ -1,0 +1,12 @@
+<div class="setting">
+  <ul class="setting__list">
+    @@for (var i = 0; i < context.arr.length; i++) {
+    <li class="setting__item">
+      <label class="checkbox">
+        <input type="checkbox" name="`+context.checkboxName[i]+`" checked>
+        <div class="checkbox__box">`+context.arr[i]+`</div>
+      </label>
+    </li>
+    }
+  </ul>
+</div>
